@@ -24,5 +24,6 @@ get '/test3' do
 end
 
 get '/cat' do
-  erb(:index)
+  @cat_name = ["Fuzzy", "Pumpernickel", "Slim Shady"].sample
+  erb :index
 end
