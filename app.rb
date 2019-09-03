@@ -19,11 +19,13 @@ get '/test2' do
   'test2'
 end
 
-get '/test3' do
-  'test4'
+get '/random-cat' do
+  @name = ["Fuzzy", "Pumpernickel", "Slim Shady"].sample
+  erb :index
 end
 
-get '/cat' do
-  @cat_name = ["Fuzzy", "Pumpernickel", "Slim Shady"].sample
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb :index
 end
