@@ -1,9 +1,9 @@
 require 'sinatra/base'
 require 'shotgun'
 
-class Battles < Sinatra::Base
+class Battle < Sinatra::Base
   get '/' do
-    'Welcome to Battles'
+    'Welcome to Battle'
   end
   
   run! if app_file == $0
