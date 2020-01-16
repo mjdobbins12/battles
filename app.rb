@@ -4,15 +4,11 @@ require 'shotgun'
 set :session_secret, "here be dragons"
 
 get '/' do
-  'Hello world!'
+  'Yo dude'
 end
 
 get '/secret' do
-  'Video killed the radio star'
-end
-
-get '/test' do
-  'test'
+  "I'm a giraffe!"
 end
 
 get '/random-cat' do
@@ -21,7 +17,6 @@ get '/random-cat' do
 end
 
 get '/named-cat' do
-  p params
   @name = params[:name]
   erb :index
 end
@@ -31,7 +26,6 @@ get '/cat-form' do
 end
 
 post '/named-cat' do
-  p params
   @name = params[:name]
   erb :index
 end
