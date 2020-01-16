@@ -1,11 +1,6 @@
-<% if @name %>
-<h1 style='color:green'>My name is <%=@name%></h1>
-<% else %>
-<form action="/named-cat" method="post">
-  <input type="text" name="name">
+<h1 style='color:green'>Welcome to Battle</h1>
+<form action="/names" method="post">
+  <input type="text" name="p1">
+  <input type="text" name="p2">
   <input type="submit" value="Submit">
 </form>
-<% end %>
-<div style='border: 3px dashed red'>
-  <img src='http://bit.ly/1eze8aE'>
-</div>
