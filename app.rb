@@ -18,7 +18,13 @@ class Battle < Sinatra::Base
   get '/play' do
     @p1 = session[:p1]
     @p2 = session[:p2]
+    @attacking_player = session[:attacking_player]
     erb :play
+  end
+  
+  post '/play' do
+    session[:attacking_player] = params[:attack]
+    redirect '/play'
   end
   
   run! if app_file == $0
