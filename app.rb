@@ -2,13 +2,22 @@ require 'sinatra/base'
 require 'shotgun'
 
 class Battle < Sinatra::Base
+  set :session_secret, "beep boop"
+  enable :sessions
+  
   get '/' do
     erb :index
   end
   
   post '/names' do
-    @p1 = params[:p1]
-    @p2 = params[:p2]
+    session[:p1] = params[:p1]
+    session[:p2] = params[:p2]
+    redirect '/play'
+  end
+  
+  get '/play' do
+    @p1 = session[:p1]
+    @p2 = session[:p2]
     erb :play
   end
   
