@@ -10,7 +10,7 @@ feature 'entering player names' do
 	
 	scenario 'players receive confirmation when attacking' do
 		sign_in_and_play
-		click_button("Attack!")
-		expect(page).to have_content("Frank attacked Mahmoud!")
+		click_button("attack2")
+		expect(page).to have_content("Attack successful!")
 	end
 end
